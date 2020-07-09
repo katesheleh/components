@@ -21,7 +21,7 @@ function App() {
 			<div className="App">
 
 				<h2>Uncontrolled On Off</h2>
-				<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+				<UncontrolledOnOff onChange={setSwitchOn} defaultOn={true}/> {switchOn.toString()}
 				<hr/>
 
 
@@ -52,8 +52,6 @@ function App() {
 				<hr/>
 
 				<h2>Uncontrolled Rating</h2>
-				<UncontrolledRating/>
-				<UncontrolledRating/>
 			</div>
 	);
 }
