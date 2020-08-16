@@ -5,19 +5,20 @@ import Accordion from './components/Accordion/Accordion';
 import OnOff from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
+import Select from './components/Select/Select';
 
 let items = [
 	{
 		title: 'John',
-		value: 'John Value Test'
+		value: '1'
 	},
 	{
 		title: 'Katia',
-		value: 'Katia Value Test'
+		value: '2'
 	},
 	{
 		title: 'FakeName',
-		value: 'FakeName Value Test'
+		value: '3'
 	}
 ]
 
@@ -32,11 +33,21 @@ function App() {
 
 	const setValueOnClick = (value: string) => {
 		alert(`user with id ${value} was clicked`)
-		debugger
 	}
+
+	let [selectValue, setSelectValue] = useState<string>('3')
+	const onSelectChange = (value: string) => {
+		setSelectValue(value)
+	}
+
 
 	return (
 			<div className="App">
+
+				<h2>Custom Select</h2>
+				<Select items={items} value={selectValue} onChange={onSelectChange}/>
+				<hr/>
+
 
 				<h2>Uncontrolled On Off</h2>
 				<UncontrolledOnOff onChange={setSwitchOn} defaultOn={true}/> {switchOn.toString()}
@@ -70,10 +81,8 @@ function App() {
 				<Rating value={ratingValue1} onClick={setRationgValue1}/>
 
 				<hr/>
-
-				<h2>Uncontrolled Rating</h2>
 			</div>
-	);
+	)
 }
 
 export default App;
