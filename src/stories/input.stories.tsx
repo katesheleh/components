@@ -25,7 +25,9 @@ export const GetValueOfUncontrolledInputByBtnPress = () => {
 	const [value, setValue] = useState('');
 	const inputRef = useRef<HTMLInputElement>(null);
 	const saveOnClick = () => {
-		setValue(inputRef.current.value)
+		if(inputRef.current) {
+			setValue(inputRef.current.value)
+		}
 	}
 
 	return (
