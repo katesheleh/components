@@ -1,7 +1,7 @@
 import React, {KeyboardEvent, useEffect, useState} from 'react';
 import styles from './Select.module.css';
 
-const Select = (props: SelectType) => {
+const Select = React.memo((props: SelectType) => {
 	const [active, setActive] = useState<boolean>(false)
 	const [hoveredElem, setHoveredElem] = useState(props.value)
 
@@ -57,7 +57,7 @@ const Select = (props: SelectType) => {
 				</div>}
 			</div>
 	)
-}
+})
 
 export default Select
 

@@ -2,7 +2,7 @@ import React from 'react';
 import AccordionTitle from './AccordionTitle/AccordionTitle';
 import AccordionBody from './AccordionBody/AccordionBody';
 
-const Accordion = (props: AccordionType) => {
+const Accordion = React.memo((props: AccordionType) => {
 	return (
 			<>
 				<AccordionTitle
@@ -12,9 +12,9 @@ const Accordion = (props: AccordionType) => {
 				{!props.collapsed && < AccordionBody items={props.items} onClick={props.onClick}/>}
 			</>
 	)
-}
+})
 
-export default Accordion;
+export default Accordion
 
 // types
 type AccordionType = {

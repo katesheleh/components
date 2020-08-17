@@ -1,18 +1,20 @@
 import React from 'react';
-import { RatingValueType } from '../Rating';
+import {RatingValueType} from '../Rating';
 
 type StarType = {
-  selected: boolean;
-  onClick: ( value: RatingValueType ) => void;
-  value: RatingValueType;
-};
+	selected: boolean
+	onClick: (value: RatingValueType) => void
+	value: RatingValueType
+}
 
-const Star = ( props: StarType ) => {
-  return (
-    <span onClick={ () => { props.onClick( props.value ); } }>
-      { props.selected ? <b>star  </b> : 'star ' }
+const Star = React.memo((props: StarType) => {
+	return (
+			<span onClick={() => {
+				props.onClick(props.value)
+			}}>
+      {props.selected ? <b>star </b> : 'star '}
     </span>
-  );
-};
+	)
+})
 
 export default Star;

@@ -3,7 +3,7 @@ import AccordionTitle from './AccordionTitle/AccordionTitle';
 import AccordionBody from './AccordionBody/AccordionBody';
 import {reducer} from './UncontrolledAccordion-reducer';
 
-const UncontrolledAccordion = (props: AccordionType) => {
+const UncontrolledAccordion = React.memo((props: AccordionType) => {
 	//let [collapsed, setCollapsed] = useState(true)
 	let [state, dispatch] = useReducer(reducer, {collapsed: false})
 
@@ -14,9 +14,9 @@ const UncontrolledAccordion = (props: AccordionType) => {
 				{state.collapsed && < AccordionBody/>}
 			</>
 	)
-}
+})
 
-export default UncontrolledAccordion
+export default UncontrolledAccordion;
 
 
 // Types
