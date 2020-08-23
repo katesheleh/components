@@ -6,6 +6,7 @@ import OnOff from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 import Select from './components/Select/Select';
+import SelectCities from './components/SelectCities/SelectCities';
 
 let items = [
 	{
@@ -19,6 +20,35 @@ let items = [
 	{
 		title: 'FakeName',
 		value: '3'
+	}
+]
+
+
+let cities = [
+	{
+		title: 'Minsk',
+		value: '1',
+		country: 'BY'
+	},
+	{
+		title: 'Brest',
+		value: '2',
+		country: 'BY'
+	},
+	{
+		title: 'Barcelona',
+		value: '3',
+		country: 'ES'
+	},
+	{
+		title: 'Madrid',
+		value: '4',
+		country: 'ES'
+	},
+	{
+		title: 'Moscow',
+		value: '5',
+		country: 'RU'
 	}
 ]
 
@@ -46,6 +76,10 @@ function App() {
 
 				<h2>Custom Select</h2>
 				<Select items={items} value={selectValue} onChange={onSelectChange}/>
+				<hr/>
+
+				<h2>Custom Select Cities with Filter</h2>
+				<SelectCities items={cities} value={selectValue} onChange={onSelectChange}/>
 				<hr/>
 
 

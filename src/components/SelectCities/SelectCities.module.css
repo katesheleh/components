@@ -1,0 +1,19 @@
+.select {
+	position: relative;
+	border: 1px solid chartreuse;
+	max-width: 300px;
+	padding-left: 15px;
+}
+
+.options {
+	padding-left: 15px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: aliceblue;
+}
+
+p.selected {
+	background-color: chartreuse;
+}

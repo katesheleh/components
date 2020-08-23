@@ -4,7 +4,7 @@ import Select from './Select';
 
 
 export default {
-	title: 'Select Second Version',
+	title: 'SelectCities Second Version',
 	component: Select,
 }
 
