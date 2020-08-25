@@ -4,8 +4,8 @@ export default {
 	title: 'useEffect demo',
 };
 
-export const Example = () => {
-	console.log('Example')
+export const SimpleExample = () => {
+	console.log('SimpleExample')
 
 	const [fake, setFake] = useState(1)
 	const [counter, setCount] = useState(1)
@@ -36,5 +36,33 @@ export const Example = () => {
 		Hello, {counter} {fake}
 		<button onClick={() => setFake(fake + 1)}>+</button>
 		<button onClick={() => setCount(counter + 1)}>+</button>
+	</>
+}
+
+export const SetIntervalExample = () => {
+	console.log('SetIntervalExample')
+
+	const [fake, setFake] = useState(1)
+	const [counter, setCount] = useState(1)
+
+	useEffect(() => {
+		setTimeout(() => {
+			console.log('SetTimeout : ' + document.title)
+			document.title = counter.toString()
+		}, 1000)
+	}, [])
+
+
+	useEffect(() => {
+		setInterval(() => {
+			console.log('SetInterval' + counter)
+			setCount((state) => state + 1)
+		}, 1000)
+	}, [])
+
+	return <>
+		Hello, counter: {counter}, fake: {fake}
+		{/*<button onClick={() => setFake(fake + 1)}>fake +</button>*/}
+		{/*<button onClick={() => setCount(counter + 1)}>counter +</button>*/}
 	</>
 }
