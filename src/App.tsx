@@ -7,6 +7,7 @@ import UncontrolledAccordion from './components/UncontrolledAccordion/Uncontroll
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 import Select from './components/Select/Select';
 import SelectCities from './components/SelectCities/SelectCities';
+import Clock from './components/Clock/Clock';
 
 let items = [
 	{
@@ -115,6 +116,8 @@ function App() {
 				<Rating value={ratingValue1} onClick={setRationgValue1}/>
 
 				<hr/>
+
+				<Clock/>
 			</div>
 	)
 }
